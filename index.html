@@ -13,9 +13,14 @@
     font-family: 'Segoe UI', sans-serif;
 }
 
+/* BACKGROUND */
 body {
-    background: #0f172a;
-    color: #e2e8f0;
+    background: linear-gradient(rgba(2,6,23,0.85), rgba(2,6,23,0.9)),
+    url('https://wallpaperaccess.com/full/10812590.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #f1f5f9;
 }
 
 /* NAVBAR */
@@ -25,7 +30,6 @@ body {
     padding: 20px 30px;
     position: fixed;
     width: 100%;
-    top: 0;
 }
 
 .logo {
@@ -39,7 +43,7 @@ body {
 }
 
 .menu-icon {
-    font-size: 24px;
+    font-size: 26px;
     cursor: pointer;
 }
 
@@ -47,20 +51,18 @@ body {
 .dropdown {
     position: absolute;
     right: 0;
-    top: 30px;
-    background: #020617;
-    border: 1px solid #1e293b;
+    top: 35px;
+    background: rgba(2,6,23,0.95);
     border-radius: 10px;
     display: none;
     flex-direction: column;
-    min-width: 150px;
+    min-width: 200px;
 }
 
 .dropdown a {
-    padding: 10px;
+    padding: 12px;
     text-decoration: none;
     color: #e2e8f0;
-    display: block;
 }
 
 .dropdown a:hover {
@@ -79,26 +81,25 @@ body {
 }
 
 .hero h1 {
-    font-size: 40px;
+    font-size: 42px;
     color: #38bdf8;
 }
 
 .hero p {
     margin-top: 20px;
-    max-width: 700px;
-    color: #94a3b8;
-    line-height: 1.6;
+    max-width: 750px;
+    line-height: 1.7;
 }
 
 /* BUTTON */
 .buttons {
-    margin-top: 25px;
+    margin-top: 30px;
 }
 
 .buttons a {
     display: inline-block;
     margin: 10px;
-    padding: 12px 22px;
+    padding: 12px 24px;
     border-radius: 10px;
     text-decoration: none;
     font-weight: bold;
@@ -114,9 +115,26 @@ body {
     color: #38bdf8;
 }
 
-/* SHOW MENU */
+/* SECTION (HIDDEN AWAL) */
+.section {
+    display: none;
+    padding: 100px 30px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.section h2 {
+    color: #38bdf8;
+    margin-bottom: 20px;
+}
+
+.section ul {
+    margin-left: 20px;
+}
+
+/* SHOW */
 .show {
-    display: flex;
+    display: block;
 }
 </style>
 </head>
@@ -131,9 +149,9 @@ body {
         <div class="menu-icon" onclick="toggleMenu()">⋮</div>
 
         <div class="dropdown" id="dropdownMenu">
-            <a href="tentang.html">Tentang Kami</a>
-            <a href="bmc.html">Business Model</a>
-            <a href="kontak.html">Hubungi Kami</a>
+            <a href="#" onclick="showSection('about')">Tentang Kami</a>
+            <a href="#" onclick="showSection('bmc')">Business Model</a>
+            <a href="https://wa.me/6289515761958" target="_blank">Hubungi Kami</a>
         </div>
     </div>
 </div>
@@ -155,17 +173,86 @@ body {
     </p>
 
     <div class="buttons">
-        <a href="tentang.html" class="btn-outline">Tentang Kami</a>
-        <a href="bmc.html" class="btn-outline">Business Model</a>
-        <a href="kontak.html" class="btn-primary">Hubungi Kami</a>
+        <a href="#" onclick="showSection('about')" class="btn-outline">Tentang Kami</a>
+        <a href="#" onclick="showSection('bmc')" class="btn-outline">Business Model</a>
+        <a href="https://wa.me/6289515761958" class="btn-primary">Hubungi Kami</a>
     </div>
 </div>
 
-<!-- SCRIPT MENU -->
+<!-- TENTANG -->
+<div id="about" class="section">
+    <h2>👨‍💻 Tentang Kami</h2>
+    <p>
+        Kami adalah tim kreatif dan profesional di bidang teknologi informasi yang memiliki semangat untuk membantu bisnis berkembang melalui digitalisasi.
+        <br><br>
+        Visi kami adalah menjadi mitra terpercaya dalam pengembangan website yang inovatif dan berkualitas.
+        <br><br>
+        <b>Misi kami:</b>
+    </p>
+    <ul>
+        <li>Memberikan layanan pembuatan website yang cepat, berkualitas, dan sesuai kebutuhan</li>
+        <li>Mengutamakan kepuasan pelanggan</li>
+        <li>Mengembangkan solusi digital yang efektif dan efisien</li>
+        <li>Mendukung transformasi digital bagi UMKM dan bisnis lokal</li>
+    </ul>
+    <br>
+    <p>
+        Kami percaya bahwa setiap bisnis membutuhkan kehadiran online yang kuat untuk bersaing di era digital saat ini.
+    </p>
+</div>
+
+<!-- BMC -->
+<div id="bmc" class="section">
+    <h2>📊 Business Model Canvas</h2>
+
+    <p><b>1. Key Partners</b></p>
+    <ul>
+        <li>Penyedia hosting & domain</li>
+        <li>Developer & designer freelance</li>
+        <li>Digital marketing agency</li>
+        <li>Payment gateway</li>
+        <li>Platform teknologi</li>
+    </ul>
+
+    <p><b>2. Key Activities</b></p>
+    <ul>
+        <li>UI/UX design</li>
+        <li>Pengembangan website</li>
+        <li>Maintenance</li>
+        <li>Konsultasi</li>
+        <li>SEO dasar</li>
+    </ul>
+
+    <p><b>3. Value Propositions</b></p>
+    <ul>
+        <li>Website modern</li>
+        <li>Harga terjangkau</li>
+        <li>Responsive</li>
+        <li>Pengerjaan cepat</li>
+        <li>Support</li>
+    </ul>
+
+    <p><b>4. Key Resources</b></p>
+    <ul>
+        <li>Tim developer</li>
+        <li>Perangkat & software</li>
+        <li>Internet</li>
+        <li>Tools pengembangan</li>
+        <li>Server & hosting</li>
+    </ul>
+</div>
+
+<!-- SCRIPT -->
 <script>
 function toggleMenu() {
-    const menu = document.getElementById("dropdownMenu");
-    menu.classList.toggle("show");
+    document.getElementById("dropdownMenu").classList.toggle("show");
+}
+
+function showSection(id) {
+    document.getElementById("about").style.display = "none";
+    document.getElementById("bmc").style.display = "none";
+    document.getElementById(id).style.display = "block";
+    window.scrollTo(0, document.body.scrollHeight);
 }
 </script>
 
