@@ -29,7 +29,6 @@ body {
     padding: 20px 30px;
     position: fixed;
     width: 100%;
-    top: 0;
     z-index: 1000;
 }
 
@@ -58,14 +57,12 @@ body {
     display: none;
     flex-direction: column;
     min-width: 200px;
-    overflow: hidden;
 }
 
 .dropdown a {
     padding: 12px;
     text-decoration: none;
     color: #e2e8f0;
-    transition: 0.2s;
 }
 
 .dropdown a:hover {
@@ -106,7 +103,6 @@ body {
     border-radius: 10px;
     text-decoration: none;
     font-weight: bold;
-    transition: 0.3s;
 }
 
 .btn-primary {
@@ -119,25 +115,16 @@ body {
     color: #38bdf8;
 }
 
-.buttons a:hover {
-    transform: translateY(-3px);
-}
-
 /* SECTION */
 .section {
-    opacity: 0;
-    transform: translateY(40px);
-    pointer-events: none;
+    display: none;
     padding: 100px 30px;
     max-width: 900px;
     margin: auto;
-    transition: 0.5s;
 }
 
 .section.active {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
+    display: block;
 }
 
 .section h2 {
@@ -227,33 +214,34 @@ body {
         <li>Penyedia hosting & domain</li>
         <li>Developer & designer freelance</li>
         <li>Digital marketing agency</li>
-        <li>Payment gateway</li>
-        <li>Platform teknologi</li>
+        <li>Penyedia payment gateway</li>
+        <li>Platform teknologi & tools</li>
     </ul>
 
     <p><b>2. Key Activities</b></p>
     <ul>
-        <li>UI/UX design</li>
+        <li>Mendesain tampilan website (UI/UX)</li>
         <li>Pengembangan website</li>
-        <li>Maintenance</li>
-        <li>Konsultasi</li>
-        <li>SEO dasar</li>
+        <li>Maintenance & update</li>
+        <li>Konsultasi klien</li>
+        <li>Optimasi SEO dasar</li>
     </ul>
 
     <p><b>3. Value Propositions</b></p>
     <ul>
-        <li>Website modern</li>
+        <li>Website profesional & modern</li>
         <li>Harga terjangkau</li>
-        <li>Responsive</li>
+        <li>Desain responsif</li>
         <li>Pengerjaan cepat</li>
-        <li>Support</li>
+        <li>Support & maintenance</li>
+        <li>Custom sesuai kebutuhan</li>
     </ul>
 
     <p><b>4. Key Resources</b></p>
     <ul>
-        <li>Tim developer</li>
-        <li>Perangkat & software</li>
-        <li>Internet</li>
+        <li>Tim developer & designer</li>
+        <li>Perangkat komputer & software</li>
+        <li>Koneksi internet</li>
         <li>Tools pengembangan</li>
         <li>Server & hosting</li>
     </ul>
@@ -271,7 +259,11 @@ function showSection(id) {
     });
 
     document.getElementById(id).classList.add('active');
-    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
+    });
 
     document.getElementById("dropdownMenu").classList.remove("show");
 }
