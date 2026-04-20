@@ -30,11 +30,14 @@ body {
     position: fixed;
     width: 100%;
     z-index: 1000;
+    background: rgba(2,6,23,0.9);
+    backdrop-filter: blur(10px);
 }
 
 .logo {
     color: #38bdf8;
     font-weight: bold;
+    font-size: 24px;
 }
 
 /* MENU */
@@ -43,46 +46,59 @@ body {
 }
 
 .menu-icon {
-    font-size: 26px;
+    font-size: 32px;
     cursor: pointer;
+    padding: 5px 10px;
+    user-select: none;
+}
+
+.menu-icon:hover {
+    color: #38bdf8;
 }
 
 /* DROPDOWN */
 .dropdown {
     position: absolute;
     right: 0;
-    top: 35px;
+    top: 45px;
     background: rgba(2,6,23,0.95);
+    backdrop-filter: blur(10px);
     border-radius: 10px;
     display: none;
     flex-direction: column;
     min-width: 200px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    border: 1px solid rgba(56,189,248,0.3);
 }
 
 .dropdown a {
-    padding: 12px;
+    padding: 12px 20px;
     text-decoration: none;
     color: #e2e8f0;
+    transition: all 0.3s;
 }
 
 .dropdown a:hover {
     background: #1e293b;
+    color: #38bdf8;
+    border-radius: 10px;
 }
 
 /* HERO */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 20px;
+    padding: 100px 20px 50px;
 }
 
 .hero h1 {
     font-size: 42px;
     color: #38bdf8;
+    margin-bottom: 20px;
 }
 
 .hero p {
@@ -99,10 +115,12 @@ body {
 .buttons a {
     display: inline-block;
     margin: 10px;
-    padding: 12px 24px;
+    padding: 12px 28px;
     border-radius: 10px;
     text-decoration: none;
     font-weight: bold;
+    transition: all 0.3s;
+    cursor: pointer;
 }
 
 .btn-primary {
@@ -110,9 +128,21 @@ body {
     color: #020617;
 }
 
+.btn-primary:hover {
+    background: #0ea5e9;
+    transform: translateY(-2px);
+}
+
 .btn-outline {
-    border: 1px solid #38bdf8;
+    border: 2px solid #38bdf8;
     color: #38bdf8;
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background: #38bdf8;
+    color: #020617;
+    transform: translateY(-2px);
 }
 
 /* SECTION */
@@ -121,6 +151,18 @@ body {
     padding: 100px 30px;
     max-width: 900px;
     margin: auto;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .section.active {
@@ -130,15 +172,81 @@ body {
 .section h2 {
     color: #38bdf8;
     margin-bottom: 20px;
+    font-size: 32px;
 }
 
 .section ul {
     margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.section ul li {
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+.section p {
+    margin: 15px 0;
+    line-height: 1.8;
 }
 
 /* SHOW MENU */
 .show {
+    display: flex !important;
+}
+
+/* Back to top button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #38bdf8;
+    color: #020617;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    transition: all 0.3s;
+    z-index: 999;
+}
+
+.back-to-top:hover {
+    background: #0ea5e9;
+    transform: scale(1.1);
+}
+
+.back-to-top.show {
     display: flex;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+    
+    .hero p {
+        font-size: 14px;
+    }
+    
+    .buttons a {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+    
+    .section h2 {
+        font-size: 24px;
+    }
+    
+    .section {
+        padding: 80px 20px;
+    }
 }
 </style>
 </head>
@@ -147,22 +255,22 @@ body {
 
 <!-- NAVBAR -->
 <div class="navbar">
-    <div class="logo">Faesal Dev</div>
+    <div class="logo">⚡ Faesal Dev</div>
 
     <div class="menu">
-        <div class="menu-icon" onclick="toggleMenu()">⋮</div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
 
         <div class="dropdown" id="dropdownMenu">
-            <a href="#" onclick="showSection('about')">Tentang Kami</a>
-            <a href="#" onclick="showSection('bmc')">Business Model</a>
-            <a href="https://wa.me/6289515761958" target="_blank">Hubungi Kami</a>
+            <a href="#" onclick="showSection('about'); return false;">📖 Tentang Kami</a>
+            <a href="#" onclick="showSection('bmc'); return false;">📊 Business Model</a>
+            <a href="https://wa.me/6289515761958" target="_blank">📞 Hubungi Kami</a>
         </div>
     </div>
 </div>
 
-<!-- HERO -->
-<div class="hero">
-    <h1>Jasa Pembuatan Website Profesional</h1>
+<!-- HERO SECTION (Home) -->
+<div id="hero-section" class="hero">
+    <h1>🚀 Jasa Pembuatan Website Profesional</h1>
 
     <p>
         Kami adalah perusahaan yang bergerak di bidang jasa pembuatan website profesional 
@@ -177,105 +285,182 @@ body {
     </p>
 
     <div class="buttons">
-        <a href="#" onclick="showSection('about')" class="btn-outline">Tentang Kami</a>
-        <a href="#" onclick="showSection('bmc')" class="btn-outline">Business Model</a>
-        <a href="https://wa.me/6289515761958" target="_blank" class="btn-primary">Hubungi Kami</a>
+        <a href="#" onclick="showSection('about'); return false;" class="btn-outline">📖 Tentang Kami</a>
+        <a href="#" onclick="showSection('bmc'); return false;" class="btn-outline">📊 Business Model</a>
+        <a href="https://wa.me/6289515761958" target="_blank" class="btn-primary">💬 Hubungi Kami</a>
     </div>
 </div>
 
-<!-- TENTANG -->
+<!-- TENTANG KAMI SECTION -->
 <div id="about" class="section">
     <h2>👨‍💻 Tentang Kami</h2>
     <p>
         Kami adalah tim kreatif dan profesional di bidang teknologi informasi yang memiliki semangat untuk membantu bisnis berkembang melalui digitalisasi.
         <br><br>
-        Visi kami adalah menjadi mitra terpercaya dalam pengembangan website yang inovatif dan berkualitas.
+        <strong>Visi kami</strong> adalah menjadi mitra terpercaya dalam pengembangan website yang inovatif dan berkualitas.
         <br><br>
-        <b>Misi kami:</b>
+        <strong>Misi kami:</strong>
     </p>
     <ul>
-        <li>Memberikan layanan pembuatan website yang cepat, berkualitas, dan sesuai kebutuhan</li>
-        <li>Mengutamakan kepuasan pelanggan</li>
-        <li>Mengembangkan solusi digital yang efektif dan efisien</li>
-        <li>Mendukung transformasi digital bagi UMKM dan bisnis lokal</li>
+        <li>✅ Memberikan layanan pembuatan website yang cepat, berkualitas, dan sesuai kebutuhan</li>
+        <li>✅ Mengutamakan kepuasan pelanggan</li>
+        <li>✅ Mengembangkan solusi digital yang efektif dan efisien</li>
+        <li>✅ Mendukung transformasi digital bagi UMKM dan bisnis lokal</li>
     </ul>
-    <br>
     <p>
         Kami percaya bahwa setiap bisnis membutuhkan kehadiran online yang kuat untuk bersaing di era digital saat ini.
     </p>
 </div>
 
-<!-- BMC -->
+<!-- BMC SECTION -->
 <div id="bmc" class="section">
     <h2>📊 Business Model Canvas</h2>
 
-    <p><b>1. Key Partners</b></p>
+    <p><strong>1. Key Partners (Mitra Kunci)</strong></p>
     <ul>
-        <li>Penyedia hosting & domain</li>
-        <li>Developer & designer freelance</li>
-        <li>Digital marketing agency</li>
-        <li>Penyedia payment gateway</li>
-        <li>Platform teknologi & tools</li>
+        <li>🤝 Penyedia hosting & domain</li>
+        <li>🤝 Developer & designer freelance</li>
+        <li>🤝 Digital marketing agency</li>
+        <li>🤝 Penyedia payment gateway</li>
+        <li>🤝 Platform teknologi & tools</li>
     </ul>
 
-    <p><b>2. Key Activities</b></p>
+    <p><strong>2. Key Activities (Aktivitas Kunci)</strong></p>
     <ul>
-        <li>Mendesain tampilan website (UI/UX)</li>
-        <li>Pengembangan website</li>
-        <li>Maintenance & update</li>
-        <li>Konsultasi klien</li>
-        <li>Optimasi SEO dasar</li>
+        <li>🎨 Mendesain tampilan website (UI/UX)</li>
+        <li>💻 Pengembangan website</li>
+        <li>🔧 Maintenance & update</li>
+        <li>📞 Konsultasi klien</li>
+        <li>📈 Optimasi SEO dasar</li>
     </ul>
 
-    <p><b>3. Value Propositions</b></p>
+    <p><strong>3. Value Propositions (Nilai Lebih)</strong></p>
     <ul>
-        <li>Website profesional & modern</li>
-        <li>Harga terjangkau</li>
-        <li>Desain responsif</li>
-        <li>Pengerjaan cepat</li>
-        <li>Support & maintenance</li>
-        <li>Custom sesuai kebutuhan</li>
+        <li>✨ Website profesional & modern</li>
+        <li>💰 Harga terjangkau</li>
+        <li>📱 Desain responsif</li>
+        <li>⚡ Pengerjaan cepat</li>
+        <li>🛠️ Support & maintenance</li>
+        <li>🎯 Custom sesuai kebutuhan</li>
     </ul>
 
-    <p><b>4. Key Resources</b></p>
+    <p><strong>4. Key Resources (Sumber Daya Kunci)</strong></p>
     <ul>
-        <li>Tim developer & designer</li>
-        <li>Perangkat komputer & software</li>
-        <li>Koneksi internet</li>
-        <li>Tools pengembangan</li>
-        <li>Server & hosting</li>
+        <li>👨‍💻 Tim developer & designer</li>
+        <li>💻 Perangkat komputer & software</li>
+        <li>🌐 Koneksi internet</li>
+        <li>🛠️ Tools pengembangan</li>
+        <li>📡 Server & hosting</li>
     </ul>
 </div>
 
+<!-- Back to Top Button -->
+<div class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</div>
+
 <!-- SCRIPT -->
 <script>
+// Toggle dropdown menu
 function toggleMenu() {
-    document.getElementById("dropdownMenu").classList.toggle("show");
+    const dropdown = document.getElementById("dropdownMenu");
+    dropdown.classList.toggle("show");
 }
 
-function showSection(id) {
-    document.querySelectorAll('.section').forEach(sec => {
-        sec.classList.remove('active');
+// Show specific section and hide hero
+function showSection(sectionId) {
+    // Sembunyikan hero section
+    const heroSection = document.getElementById('hero-section');
+    if (heroSection) {
+        heroSection.style.display = 'none';
+    }
+    
+    // Sembunyikan semua section
+    const allSections = document.querySelectorAll('.section');
+    allSections.forEach(section => {
+        section.classList.remove('active');
     });
+    
+    // Tampilkan section yang dipilih
+    const targetSection = document.getElementById(sectionId);
+    if (targetSection) {
+        targetSection.classList.add('active');
+        
+        // Scroll ke atas halaman setelah section ditampilkan
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    } else {
+        console.error('Section dengan ID "' + sectionId + '" tidak ditemukan');
+    }
+    
+    // Tutup dropdown menu
+    const dropdown = document.getElementById("dropdownMenu");
+    dropdown.classList.remove("show");
+}
 
-    document.getElementById(id).classList.add('active');
-
+// Function untuk kembali ke home (menampilkan hero)
+function showHome() {
+    const heroSection = document.getElementById('hero-section');
+    if (heroSection) {
+        heroSection.style.display = 'flex';
+    }
+    
+    // Sembunyikan semua section
+    const allSections = document.querySelectorAll('.section');
+    allSections.forEach(section => {
+        section.classList.remove('active');
+    });
+    
+    // Scroll ke atas
     window.scrollTo({
-        top: document.body.scrollHeight,
+        top: 0,
         behavior: 'smooth'
     });
-
-    document.getElementById("dropdownMenu").classList.remove("show");
 }
 
-/* klik luar menu = tutup */
+// Scroll to top function
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// Show/hide back to top button based on scroll position
+window.addEventListener('scroll', function() {
+    const backToTop = document.getElementById('backToTop');
+    if (window.pageYOffset > 300) {
+        backToTop.classList.add('show');
+    } else {
+        backToTop.classList.remove('show');
+    }
+});
+
+// Tutup dropdown ketika klik di luar menu
 document.addEventListener('click', function(e) {
     const menu = document.getElementById("dropdownMenu");
     const icon = document.querySelector(".menu-icon");
-
-    if (!icon.contains(e.target) && !menu.contains(e.target)) {
+    
+    if (menu && icon && !icon.contains(e.target) && !menu.contains(e.target)) {
         menu.classList.remove("show");
     }
+});
+
+// Logo click to go home
+document.querySelector('.logo').addEventListener('click', function() {
+    showHome();
+});
+
+// Prevent default untuk semua link yang tidak memiliki href yang valid
+document.querySelectorAll('a[href="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+    });
+});
+
+// Inisialisasi: pastikan hero tampil dan semua section tersembunyi
+document.addEventListener('DOMContentLoaded', function() {
+    showHome();
 });
 </script>
 
