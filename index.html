@@ -3,62 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Faesal Web Developer - Professional Website Builder</title>
+<title>Faesal Web Developer</title>
 
 <style>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', 'Poppins', sans-serif;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 body {
-    /* Gradient background yang lebih modern dan terang */
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: #2d3748;
-    min-height: 100vh;
-    position: relative;
+    background: linear-gradient(rgba(2,6,23,0.85), rgba(2,6,23,0.9)),
+    url('https://wallpaperaccess.com/full/10812590.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #f1f5f9;
 }
-
-/* Menambahkan pattern overlay untuk tekstur */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><path fill="white" d="M20,20 L80,20 L80,80 L20,80 Z"/><circle cx="50" cy="50" r="30"/></svg>');
-    background-size: 50px;
-    pointer-events: none;
-}
-
-/* Alternative: Background dengan pattern geometric yang keren */
-/* Bisa juga menggunakan background solid dengan aksen */
 
 /* NAVBAR */
 .navbar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
+    padding: 20px 30px;
     position: fixed;
     width: 100%;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(2,6,23,0.9);
     backdrop-filter: blur(10px);
-    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
 }
 
 .logo {
-    font-size: 28px;
+    color: #38bdf8;
     font-weight: bold;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    cursor: pointer;
+    font-size: 24px;
 }
 
 /* MENU */
@@ -70,44 +49,42 @@ body::before {
     font-size: 32px;
     cursor: pointer;
     padding: 5px 10px;
-    color: #667eea;
-    transition: all 0.3s;
+    user-select: none;
 }
 
 .menu-icon:hover {
-    transform: scale(1.1);
+    color: #38bdf8;
 }
 
 /* DROPDOWN */
 .dropdown {
     position: absolute;
     right: 0;
-    top: 50px;
-    background: white;
-    border-radius: 15px;
+    top: 45px;
+    background: rgba(2,6,23,0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
     display: none;
     flex-direction: column;
-    min-width: 220px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-    border: 1px solid rgba(102, 126, 234, 0.2);
-    overflow: hidden;
+    min-width: 200px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    border: 1px solid rgba(56,189,248,0.3);
 }
 
 .dropdown a {
-    padding: 15px 20px;
+    padding: 12px 20px;
     text-decoration: none;
-    color: #4a5568;
+    color: #e2e8f0;
     transition: all 0.3s;
-    font-weight: 500;
 }
 
 .dropdown a:hover {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding-left: 30px;
+    background: #1e293b;
+    color: #38bdf8;
+    border-radius: 10px;
 }
 
-/* HERO SECTION */
+/* HERO */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -116,138 +93,102 @@ body::before {
     align-items: center;
     text-align: center;
     padding: 100px 20px 50px;
-    position: relative;
 }
 
-/* Card style untuk konten */
 .hero h1 {
-    font-size: 52px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 30px;
-    font-weight: 800;
+    font-size: 42px;
+    color: #38bdf8;
+    margin-bottom: 20px;
 }
 
 .hero p {
-    max-width: 800px;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-    line-height: 1.8;
-    color: #2d3748;
-    margin: 20px auto;
+    margin-top: 20px;
+    max-width: 750px;
+    line-height: 1.7;
 }
 
 /* BUTTON */
 .buttons {
     margin-top: 30px;
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
 .buttons a {
     display: inline-block;
-    padding: 14px 32px;
-    border-radius: 50px;
+    margin: 10px;
+    padding: 12px 28px;
+    border-radius: 10px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: bold;
     transition: all 0.3s;
     cursor: pointer;
-    font-size: 16px;
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    background: #38bdf8;
+    color: #020617;
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+    background: #0ea5e9;
+    transform: translateY(-2px);
 }
 
 .btn-outline {
-    border: 2px solid #667eea;
-    color: #667eea;
-    background: white;
+    border: 2px solid #38bdf8;
+    color: #38bdf8;
+    background: transparent;
 }
 
 .btn-outline:hover {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    transform: translateY(-3px);
-    border-color: transparent;
+    background: #38bdf8;
+    color: #020617;
+    transform: translateY(-2px);
 }
 
-/* SECTION CARD STYLE */
+/* SECTION */
 .section {
     display: none;
     padding: 100px 30px;
-    max-width: 1000px;
+    max-width: 900px;
     margin: auto;
-    animation: fadeInUp 0.6s ease;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .section.active {
     display: block;
 }
 
-/* Card style untuk setiap section */
-.section > * {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
-    padding: 30px;
-    margin-bottom: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
 .section h2 {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 25px;
-    font-size: 36px;
-    font-weight: 700;
-    padding: 0;
+    color: #38bdf8;
+    margin-bottom: 20px;
+    font-size: 32px;
 }
 
 .section ul {
     margin-left: 20px;
-    margin-top: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .section ul li {
-    margin: 12px 0;
+    margin: 8px 0;
     line-height: 1.6;
-    color: #2d3748;
 }
 
 .section p {
     margin: 15px 0;
     line-height: 1.8;
-    color: #2d3748;
-}
-
-.section strong {
-    color: #667eea;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 /* SHOW MENU */
@@ -260,10 +201,10 @@ body::before {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    width: 50px;
-    height: 50px;
+    background: #38bdf8;
+    color: #020617;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     display: none;
     align-items: center;
@@ -273,90 +214,38 @@ body::before {
     font-weight: bold;
     transition: all 0.3s;
     z-index: 999;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .back-to-top:hover {
+    background: #0ea5e9;
     transform: scale(1.1);
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
 }
 
 .back-to-top.show {
     display: flex;
 }
 
-/* Floating shapes untuk background lebih menarik */
-.shape {
-    position: fixed;
-    opacity: 0.1;
-    pointer-events: none;
-    z-index: 0;
-}
-
-.shape-1 {
-    top: 10%;
-    left: -5%;
-    width: 300px;
-    height: 300px;
-    background: white;
-    border-radius: 50%;
-    filter: blur(50px);
-}
-
-.shape-2 {
-    bottom: 10%;
-    right: -5%;
-    width: 400px;
-    height: 400px;
-    background: white;
-    border-radius: 50%;
-    filter: blur(60px);
-}
-
-.shape-3 {
-    top: 50%;
-    left: 50%;
-    width: 200px;
-    height: 200px;
-    background: white;
-    border-radius: 50%;
-    filter: blur(40px);
-}
-
 /* Responsive */
 @media (max-width: 768px) {
-    .navbar {
-        padding: 15px 20px;
-    }
-    
-    .logo {
-        font-size: 22px;
-    }
-    
     .hero h1 {
-        font-size: 32px;
+        font-size: 28px;
     }
     
     .hero p {
         font-size: 14px;
-        padding: 20px;
     }
     
     .buttons a {
-        padding: 10px 20px;
+        padding: 8px 20px;
         font-size: 14px;
     }
     
-    .section {
-        padding: 80px 15px;
-    }
-    
-    .section > * {
-        padding: 20px;
-    }
-    
     .section h2 {
-        font-size: 28px;
+        font-size: 24px;
+    }
+    
+    .section {
+        padding: 80px 20px;
     }
 }
 </style>
@@ -364,14 +253,9 @@ body::before {
 
 <body>
 
-<!-- Floating background shapes -->
-<div class="shape shape-1"></div>
-<div class="shape shape-2"></div>
-<div class="shape shape-3"></div>
-
 <!-- NAVBAR -->
 <div class="navbar">
-    <div class="logo" onclick="showHome()">✨ Faesal Dev</div>
+    <div class="logo">⚡ Faesal Dev</div>
 
     <div class="menu">
         <div class="menu-icon" onclick="toggleMenu()">☰</div>
@@ -379,17 +263,16 @@ body::before {
         <div class="dropdown" id="dropdownMenu">
             <a href="#" onclick="showSection('about'); return false;">📖 Tentang Kami</a>
             <a href="#" onclick="showSection('bmc'); return false;">📊 Business Model</a>
-            <a href="https://wa.me/6289515761958" target="_blank">💬 Hubungi Kami</a>
+            <a href="https://wa.me/6289515761958" target="_blank">📞 Hubungi Kami</a>
         </div>
     </div>
 </div>
 
-<!-- HERO SECTION -->
+<!-- HERO SECTION (Home) -->
 <div id="hero-section" class="hero">
     <h1>🚀 Jasa Pembuatan Website Profesional</h1>
 
     <p>
-        <strong>✨ Transformasi Digital untuk Bisnis Anda ✨</strong><br><br>
         Kami adalah perusahaan yang bergerak di bidang jasa pembuatan website profesional 
         yang berfokus pada kebutuhan bisnis modern. Dengan mengutamakan desain yang menarik, 
         responsif, dan user-friendly, kami membantu pelaku usaha, UMKM, hingga perusahaan 
@@ -404,76 +287,71 @@ body::before {
     <div class="buttons">
         <a href="#" onclick="showSection('about'); return false;" class="btn-outline">📖 Tentang Kami</a>
         <a href="#" onclick="showSection('bmc'); return false;" class="btn-outline">📊 Business Model</a>
-        <a href="https://wa.me/6289515761958" target="_blank" class="btn-primary">💬 Konsultasi Gratis</a>
+        <a href="https://wa.me/6289515761958" target="_blank" class="btn-primary">💬 Hubungi Kami</a>
     </div>
 </div>
 
 <!-- TENTANG KAMI SECTION -->
 <div id="about" class="section">
-    <div>
-        <h2>👨‍💻 Tentang Kami</h2>
-        <p>
-            Kami adalah tim kreatif dan profesional di bidang teknologi informasi yang memiliki semangat untuk membantu bisnis berkembang melalui digitalisasi.
-            <br><br>
-            <strong>🎯 Visi kami</strong> adalah menjadi mitra terpercaya dalam pengembangan website yang inovatif dan berkualitas.
-            <br><br>
-            <strong>⭐ Misi kami:</strong>
-        </p>
-        <ul>
-            <li>✅ Memberikan layanan pembuatan website yang cepat, berkualitas, dan sesuai kebutuhan</li>
-            <li>✅ Mengutamakan kepuasan pelanggan dengan support 24/7</li>
-            <li>✅ Mengembangkan solusi digital yang efektif dan efisien</li>
-            <li>✅ Mendukung transformasi digital bagi UMKM dan bisnis lokal</li>
-            <li>✅ Memberikan harga terbaik dengan kualitas premium</li>
-        </ul>
-        <p>
-            <strong>💡 Kami percaya</strong> bahwa setiap bisnis membutuhkan kehadiran online yang kuat untuk bersaing di era digital saat ini.
-        </p>
-    </div>
+    <h2>👨‍💻 Tentang Kami</h2>
+    <p>
+        Kami adalah tim kreatif dan profesional di bidang teknologi informasi yang memiliki semangat untuk membantu bisnis berkembang melalui digitalisasi.
+        <br><br>
+        <strong>Visi kami</strong> adalah menjadi mitra terpercaya dalam pengembangan website yang inovatif dan berkualitas.
+        <br><br>
+        <strong>Misi kami:</strong>
+    </p>
+    <ul>
+        <li>✅ Memberikan layanan pembuatan website yang cepat, berkualitas, dan sesuai kebutuhan</li>
+        <li>✅ Mengutamakan kepuasan pelanggan</li>
+        <li>✅ Mengembangkan solusi digital yang efektif dan efisien</li>
+        <li>✅ Mendukung transformasi digital bagi UMKM dan bisnis lokal</li>
+    </ul>
+    <p>
+        Kami percaya bahwa setiap bisnis membutuhkan kehadiran online yang kuat untuk bersaing di era digital saat ini.
+    </p>
 </div>
 
 <!-- BMC SECTION -->
 <div id="bmc" class="section">
-    <div>
-        <h2>📊 Business Model Canvas</h2>
+    <h2>📊 Business Model Canvas</h2>
 
-        <p><strong>🤝 1. Key Partners (Mitra Kunci)</strong></p>
-        <ul>
-            <li>Penyedia hosting & domain terpercaya</li>
-            <li>Developer & designer freelance berpengalaman</li>
-            <li>Digital marketing agency partner</li>
-            <li>Penyedia payment gateway (Midtrans, Xendit)</li>
-            <li>Platform teknologi & tools modern</li>
-        </ul>
+    <p><strong>1. Key Partners (Mitra Kunci)</strong></p>
+    <ul>
+        <li>🤝 Penyedia hosting & domain</li>
+        <li>🤝 Developer & designer freelance</li>
+        <li>🤝 Digital marketing agency</li>
+        <li>🤝 Penyedia payment gateway</li>
+        <li>🤝 Platform teknologi & tools</li>
+    </ul>
 
-        <p><strong>⚙️ 2. Key Activities (Aktivitas Kunci)</strong></p>
-        <ul>
-            <li>Mendesain tampilan website modern (UI/UX)</li>
-            <li>Pengembangan website dengan teknologi terbaru</li>
-            <li>Maintenance & update rutin</li>
-            <li>Konsultasi dan pendampingan klien</li>
-            <li>Optimasi SEO dan performa website</li>
-        </ul>
+    <p><strong>2. Key Activities (Aktivitas Kunci)</strong></p>
+    <ul>
+        <li>🎨 Mendesain tampilan website (UI/UX)</li>
+        <li>💻 Pengembangan website</li>
+        <li>🔧 Maintenance & update</li>
+        <li>📞 Konsultasi klien</li>
+        <li>📈 Optimasi SEO dasar</li>
+    </ul>
 
-        <p><strong>💎 3. Value Propositions (Nilai Lebih)</strong></p>
-        <ul>
-            <li>Website profesional & modern dengan desain eksklusif</li>
-            <li>Harga terjangkau dengan kualitas premium</li>
-            <li>Desain responsif untuk semua device</li>
-            <li>Pengerjaan cepat tepat waktu</li>
-            <li>Support & maintenance purna jual</li>
-            <li>Custom 100% sesuai kebutuhan bisnis</li>
-        </ul>
+    <p><strong>3. Value Propositions (Nilai Lebih)</strong></p>
+    <ul>
+        <li>✨ Website profesional & modern</li>
+        <li>💰 Harga terjangkau</li>
+        <li>📱 Desain responsif</li>
+        <li>⚡ Pengerjaan cepat</li>
+        <li>🛠️ Support & maintenance</li>
+        <li>🎯 Custom sesuai kebutuhan</li>
+    </ul>
 
-        <p><strong>📦 4. Key Resources (Sumber Daya Kunci)</strong></p>
-        <ul>
-            <li>Tim developer & designer profesional</li>
-            <li>Perangkat komputer & software berlisensi</li>
-            <li>Koneksi internet super cepat</li>
-            <li>Tools pengembangan modern</li>
-            <li>Server & hosting premium</li>
-        </ul>
-    </div>
+    <p><strong>4. Key Resources (Sumber Daya Kunci)</strong></p>
+    <ul>
+        <li>👨‍💻 Tim developer & designer</li>
+        <li>💻 Perangkat komputer & software</li>
+        <li>🌐 Koneksi internet</li>
+        <li>🛠️ Tools pengembangan</li>
+        <li>📡 Server & hosting</li>
+    </ul>
 </div>
 
 <!-- Back to Top Button -->
@@ -506,7 +384,7 @@ function showSection(sectionId) {
     if (targetSection) {
         targetSection.classList.add('active');
         
-        // Scroll ke atas halaman
+        // Scroll ke atas halaman setelah section ditampilkan
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
@@ -520,7 +398,7 @@ function showSection(sectionId) {
     dropdown.classList.remove("show");
 }
 
-// Function untuk kembali ke home
+// Function untuk kembali ke home (menampilkan hero)
 function showHome() {
     const heroSection = document.getElementById('hero-section');
     if (heroSection) {
@@ -548,7 +426,7 @@ function scrollToTop() {
     });
 }
 
-// Show/hide back to top button
+// Show/hide back to top button based on scroll position
 window.addEventListener('scroll', function() {
     const backToTop = document.getElementById('backToTop');
     if (window.pageYOffset > 300) {
@@ -568,7 +446,19 @@ document.addEventListener('click', function(e) {
     }
 });
 
-// Inisialisasi
+// Logo click to go home
+document.querySelector('.logo').addEventListener('click', function() {
+    showHome();
+});
+
+// Prevent default untuk semua link yang tidak memiliki href yang valid
+document.querySelectorAll('a[href="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+    });
+});
+
+// Inisialisasi: pastikan hero tampil dan semua section tersembunyi
 document.addEventListener('DOMContentLoaded', function() {
     showHome();
 });
