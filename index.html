@@ -17,6 +17,8 @@ body {
     background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
     color: #14532d;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* NAVBAR */
@@ -197,8 +199,8 @@ body {
 /* SECTION CARD STYLE */
 .section {
     display: none;
-    padding: 100px 30px;
-    max-width: 1000px;
+    padding: 100px 30px 50px;
+    max-width: 1200px;
     margin: auto;
     animation: fadeInUp 0.6s ease;
 }
@@ -207,8 +209,8 @@ body {
     display: block;
 }
 
-/* Card style untuk setiap section */
-.section > * {
+/* Style untuk tentang kami */
+#about > div {
     background: white;
     border-radius: 20px;
     padding: 35px;
@@ -217,7 +219,7 @@ body {
     border: 1px solid #d1fae5;
 }
 
-.section h2 {
+#about h2 {
     background: linear-gradient(135deg, #059669 0%, #10b981 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -225,29 +227,151 @@ body {
     margin-bottom: 25px;
     font-size: 36px;
     font-weight: 700;
-    padding: 0;
 }
 
-.section ul {
+#about ul {
     margin-left: 25px;
     margin-top: 15px;
     margin-bottom: 20px;
 }
 
-.section ul li {
+#about ul li {
     margin: 12px 0;
     line-height: 1.6;
     color: #065f46;
 }
 
-.section p {
+#about p {
     margin: 15px 0;
     line-height: 1.8;
     color: #065f46;
 }
 
-.section strong {
+#about strong {
     color: #059669;
+}
+
+/* ============ BUSINESS MODEL CANVAS - STYLE BARU ============ */
+.bmc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.bmc-card {
+    background: white;
+    border-radius: 20px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #d1fae5;
+}
+
+.bmc-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(5, 150, 105, 0.15);
+}
+
+.bmc-header {
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    padding: 20px 25px;
+    color: white;
+}
+
+.bmc-header h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bmc-header .bmc-icon {
+    font-size: 32px;
+}
+
+.bmc-content {
+    padding: 25px;
+}
+
+.bmc-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bmc-content ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #e5e7eb;
+    color: #065f46;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.bmc-content ul li:last-child {
+    border-bottom: none;
+}
+
+.bmc-content ul li::before {
+    content: "▸";
+    color: #10b981;
+    font-weight: bold;
+}
+
+/* Style untuk bagian BMC dengan layout yang lebih rapi */
+.bmc-wrapper {
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+}
+
+/* Key Partners - card 1 */
+.bmc-card:nth-child(1) .bmc-header {
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+}
+
+/* Key Activities - card 2 */
+.bmc-card:nth-child(2) .bmc-header {
+    background: linear-gradient(135deg, #047857 0%, #059669 100%);
+}
+
+/* Value Propositions - card 3 */
+.bmc-card:nth-child(3) .bmc-header {
+    background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+}
+
+/* Key Resources - card 4 */
+.bmc-card:nth-child(4) .bmc-header {
+    background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
+}
+
+/* Tambahan card untuk Customer Segments */
+.bmc-card:nth-child(5) .bmc-header {
+    background: linear-gradient(135deg, #059669 0%, #34d399 100%);
+}
+
+/* Tambahan card untuk Channels */
+.bmc-card:nth-child(6) .bmc-header {
+    background: linear-gradient(135deg, #047857 0%, #10b981 100%);
+}
+
+/* Tambahan card untuk Customer Relationships */
+.bmc-card:nth-child(7) .bmc-header {
+    background: linear-gradient(135deg, #065f46 0%, #059669 100%);
+}
+
+/* Tambahan card untuk Cost Structure */
+.bmc-card:nth-child(8) .bmc-header {
+    background: linear-gradient(135deg, #064e3b 0%, #047857 100%);
+}
+
+/* Tambahan card untuk Revenue Streams */
+.bmc-card:nth-child(9) .bmc-header {
+    background: linear-gradient(135deg, #022c22 0%, #064e3b 100%);
 }
 
 @keyframes fadeInUp {
@@ -264,6 +388,125 @@ body {
 /* SHOW MENU */
 .show {
     display: flex !important;
+}
+
+/* FOOTER - HIJAU TUA */
+.footer {
+    background: #064e3b;
+    color: #ecfdf5;
+    padding: 50px 40px 30px;
+    margin-top: auto;
+    border-top: 5px solid #10b981;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.footer-section h3 {
+    color: #34d399;
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.footer-section h4 {
+    color: #6ee7b7;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.footer-section p {
+    line-height: 1.8;
+    color: #d1fae5;
+    margin-bottom: 15px;
+}
+
+.footer-section .description {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.footer-nav {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-nav li {
+    margin-bottom: 12px;
+}
+
+.footer-nav a {
+    color: #d1fae5;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.footer-nav a:hover {
+    color: #34d399;
+    transform: translateX(5px);
+}
+
+.contact-info {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #d1fae5;
+}
+
+.contact-info a {
+    color: #d1fae5;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-info a:hover {
+    color: #34d399;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: #d1fae5;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+}
+
+.social-links a:hover {
+    background: #10b981;
+    color: #064e3b;
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: 1px solid #065f46;
+    color: #6ee7b7;
+    font-size: 14px;
 }
 
 /* Back to top button */
@@ -326,18 +569,18 @@ body {
     }
     
     .section {
-        padding: 80px 15px;
+        padding: 80px 15px 40px;
     }
     
-    .section > * {
+    #about > div {
         padding: 25px;
     }
     
-    .section h2 {
+    #about h2 {
         font-size: 28px;
     }
     
-    .section ul {
+    #about ul {
         margin-left: 20px;
     }
     
@@ -348,6 +591,38 @@ body {
     .dropdown a {
         padding: 12px 16px;
         font-size: 14px;
+    }
+    
+    .footer {
+        padding: 40px 20px 20px;
+    }
+    
+    .footer-container {
+        gap: 30px;
+    }
+    
+    .social-links {
+        flex-wrap: wrap;
+    }
+    
+    .bmc-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .bmc-header h3 {
+        font-size: 20px;
+    }
+    
+    .bmc-content {
+        padding: 20px;
+    }
+}
+
+/* Desktop large screens */
+@media (min-width: 1024px) {
+    .bmc-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -372,38 +647,6 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #059669;
-}
-
-/* Additional polish for better readability */
-.section ul li::marker {
-    color: #10b981;
-}
-
-.hero p::first-letter {
-    font-size: 48px;
-    font-weight: bold;
-    color: #059669;
-    margin-right: 5px;
-}
-
-/* Card hover effect */
-.section > * {
-    transition: all 0.3s ease;
-}
-
-.section > *:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(5, 150, 105, 0.15);
-}
-
-/* Footer note (optional) */
-.footer-note {
-    text-align: center;
-    padding: 30px;
-    color: #065f46;
-    background: white;
-    margin-top: 50px;
-    border-top: 1px solid #d1fae5;
 }
 </style>
 </head>
@@ -471,49 +714,234 @@ html {
     </div>
 </div>
 
-<!-- BMC SECTION -->
+<!-- BMC SECTION - DENGAN CARD TERPISAH -->
 <div id="bmc" class="section">
-    <div>
-        <h2>📊 Business Model Canvas</h2>
+    <div class="bmc-wrapper">
+        <h2 style="text-align: center; margin-bottom: 40px;">📊 Business Model Canvas</h2>
+        
+        <div class="bmc-grid">
+            <!-- Key Partners Card -->
+            <div class="bmc-card">
+                <div class="bmc-header">
+                    <h3>
+                        <span class="bmc-icon">🤝</span>
+                        Key Partners
+                    </h3>
+                </div>
+                <div class="bmc-content">
+                    <ul>
+                        <li>Penyedia hosting & domain terpercaya</li>
+                        <li>Developer & designer freelance berpengalaman</li>
+                        <li>Digital marketing agency partner</li>
+                        <li>Penyedia payment gateway profesional</li>
+                        <li>Platform teknologi & tools modern</li>
+                    </ul>
+                </div>
+            </div>
 
-        <p><strong>🤝 1. Key Partners (Mitra Kunci)</strong></p>
-        <ul>
-            <li>Penyedia hosting & domain terpercaya</li>
-            <li>Developer & designer freelance berpengalaman</li>
-            <li>Digital marketing agency partner</li>
-            <li>Penyedia payment gateway profesional</li>
-            <li>Platform teknologi & tools modern</li>
-        </ul>
+            <!-- Key Activities Card -->
+            <div class="bmc-card">
+                <div class="bmc-header">
+                    <h3>
+                        <span class="bmc-icon">⚙️</span>
+                        Key Activities
+                    </h3>
+                </div>
+                <div class="bmc-content">
+                    <ul>
+                        <li>Mendesain tampilan website modern (UI/UX)</li>
+                        <li>Pengembangan website dengan teknologi terkini</li>
+                        <li>Maintenance & update rutin berkala</li>
+                        <li>Konsultasi dan pendampingan klien</li>
+                        <li>Optimasi SEO dan performa website</li>
+                    </ul>
+                </div>
+            </div>
 
-        <p><strong>⚙️ 2. Key Activities (Aktivitas Kunci)</strong></p>
-        <ul>
-            <li>Mendesain tampilan website modern (UI/UX)</li>
-            <li>Pengembangan website dengan teknologi terkini</li>
-            <li>Maintenance & update rutin berkala</li>
-            <li>Konsultasi dan pendampingan klien</li>
-            <li>Optimasi SEO dan performa website</li>
-        </ul>
+            <!-- Value Propositions Card -->
+            <div class="bmc-card">
+                <div class="bmc-header">
+                    <h3>
+                        <span class="bmc-icon">💎</span>
+                        Value Propositions
+                    </h3>
+                </div>
+                <div class="bmc-content">
+                    <ul>
+                        <li>Website profesional & modern dengan desain eksklusif</li>
+                        <li>Harga terjangkau dengan kualitas premium</li>
+                        <li>Desain responsif untuk semua device</li>
+                        <li>Pengerjaan cepat tepat waktu</li>
+                        <li>Support & maintenance purna jual</li>
+                        <li>Custom 100% sesuai kebutuhan bisnis</li>
+                    </ul>
+                </div>
+            </div>
 
-        <p><strong>💎 3. Value Propositions (Nilai Lebih)</strong></p>
-        <ul>
-            <li>Website profesional & modern dengan desain eksklusif</li>
-            <li>Harga terjangkau dengan kualitas premium</li>
-            <li>Desain responsif untuk semua device</li>
-            <li>Pengerjaan cepat tepat waktu</li>
-            <li>Support & maintenance purna jual</li>
-            <li>Custom 100% sesuai kebutuhan bisnis</li>
-        </ul>
+            <!-- Key Resources Card -->
+            <div class="bmc-card">
+                <div class="bmc-header">
+                    <h3>
+                        <span class="bmc-icon">📦</span>
+                        Key Resources
+                    </h3>
+                </div>
+                <div class="bmc-content">
+                    <ul>
+                        <li>Tim developer & designer profesional</li>
+                        <li>Perangkat komputer & software berlisensi</li>
+                        <li>Koneksi internet super cepat</li>
+                        <li>Tools pengembangan modern</li>
+                        <li>Server & hosting premium</li>
+                    </ul>
+                </div>
+            </div>
 
-        <p><strong>📦 4. Key Resources (Sumber Daya Kunci)</strong></p>
-        <ul>
-            <li>Tim developer & designer profesional</li>
-            <li>Perangkat komputer & software berlisensi</li>
-            <li>Koneksi internet super cepat</li>
-            <li>Tools pengembangan modern</li>
-            <li>Server & hosting premium</li>
-        </ul>
+            <!-- Customer Segments Card -->
+            <div class="bmc-card">
+                <div class="bmc-header">
+                    <h3>
+                        <span class="bmc-icon">👥</span>
+                        Customer Segments
+                    </h3>
+                </div>
+                <div class="bmc-content">
+                    <ul>
+                        <li>UMKM yang ingin go digital</li>
+                        <li>Perusahaan startup</li>
+                        <li>Bisnis retail & toko online</li>
+                        <li>Profesional & freelancer</li>
+                        <li>Organisasi & lembaga</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Channels Card -->
+            <div class="bmc-card">
+                <div class="bmc-header">
+                    <h3>
+                        <span class="bmc-icon">📢</span>
+                        Channels
+                    </h3>
+                </div>
+                <div class="bmc-content">
+                    <ul>
+                        <li>Website resmi perusahaan</li>
+                        <li>Social media (Instagram, LinkedIn)</li>
+                        <li>WhatsApp business</li>
+                        <li>Referensi dari klien</li>
+                        <li>Marketplace freelance</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Customer Relationships Card -->
+            <div class="bmc-card">
+                <div class="bmc-header">
+                    <h3>
+                        <span class="bmc-icon">💬</span>
+                        Customer Relationships
+                    </h3>
+                </div>
+                <div class="bmc-content">
+                    <ul>
+                        <li>Konsultasi personal & dedicated support</li>
+                        <li>Maintenance & update berkala</li>
+                        <li>Training & pendampingan</li>
+                        <li>Feedback & evaluasi rutin</li>
+                        <li>Layanan after-sales</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Cost Structure Card -->
+            <div class="bmc-card">
+                <div class="bmc-header">
+                    <h3>
+                        <span class="bmc-icon">💰</span>
+                        Cost Structure
+                    </h3>
+                </div>
+                <div class="bmc-content">
+                    <ul>
+                        <li>Gaji developer & designer</li>
+                        <li>Biaya hosting & domain</li>
+                        <li>Lisensi software & tools</li>
+                        <li>Biaya marketing & operasional</li>
+                        <li>Server & infrastruktur</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Revenue Streams Card -->
+            <div class="bmc-card">
+                <div class="bmc-header">
+                    <h3>
+                        <span class="bmc-icon">💵</span>
+                        Revenue Streams
+                    </h3>
+                </div>
+                <div class="bmc-content">
+                    <ul>
+                        <li>Biaya pembuatan website (one-time)</li>
+                        <li>Biaya maintenance bulanan/tahunan</li>
+                        <li>Jasa konsultasi IT</li>
+                        <li>Jasa optimasi & update</li>
+                        <li>Affiliate hosting & domain</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+<!-- FOOTER - HIJAU TUA -->
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Deskripsi Singkat -->
+        <div class="footer-section">
+            <h3>🌿 Faesal Dev</h3>
+            <p class="description">
+                Penyedia jasa pembuatan website profesional yang berfokus pada kebutuhan bisnis modern. 
+                Kami membantu UMKM dan perusahaan berkembang memiliki identitas digital yang kuat 
+                dengan desain menarik, responsif, dan harga terjangkau.
+            </p>
+            <p class="description">
+                <strong>✨ Visi:</strong> Menjadi mitra terpercaya dalam pengembangan website inovatif.<br>
+                <strong>🎯 Misi:</strong> Memberikan solusi digital terbaik untuk kesuksesan bisnis Anda.
+            </p>
+        </div>
+
+        <!-- Navigasi -->
+        <div class="footer-section">
+            <h3>📚 Navigasi</h3>
+            <ul class="footer-nav">
+                <li><a href="#" onclick="showHome(); return false;">🏠 Beranda</a></li>
+                <li><a href="#" onclick="showSection('about'); return false;">📖 Tentang Kami</a></li>
+                <li><a href="#" onclick="showSection('bmc'); return false;">📊 Business Model Canvas</a></li>
+                <li><a href="https://wa.me/6289515761958" target="_blank">💬 Hubungi Kami</a></li>
+            </ul>
+        </div>
+
+        <!-- Kontak -->
+        <div class="footer-section">
+            <h3>📞 Kontak Kami</h3>
+            <ul class="contact-info">
+                <li>📱 <a href="https://wa.me/6289515761958" target="_blank">+62 895-1576-1958</a></li>
+                <li>📷 <a href="https://instagram.com/webdev" target="_blank">@webdev</a></li>
+                <li>📍 Jl. Pramuka No. 123, Gunung Sugih, Lampung Tengah</li>
+                <li>✉️ faesal@webdev.com</li>
+            </ul>
+            <div class="social-links">
+                <a href="https://wa.me/6289515761958" target="_blank">💬 WhatsApp</a>
+                <a href="https://instagram.com/webdev" target="_blank">📷 Instagram</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Faesal Web Developer. All rights reserved. | Dibuat dengan 💚 untuk Indonesia</p>
+    </div>
+</footer>
 
 <!-- Back to Top Button -->
 <div class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</div>
@@ -545,11 +973,13 @@ function showSection(sectionId) {
     if (targetSection) {
         targetSection.classList.add('active');
         
-        // Scroll ke atas halaman setelah section ditampilkan
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+        // Scroll ke atas
+        setTimeout(() => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }, 100);
     } else {
         console.error('Section dengan ID "' + sectionId + '" tidak ditemukan');
     }
@@ -559,7 +989,7 @@ function showSection(sectionId) {
     dropdown.classList.remove("show");
 }
 
-// Function untuk kembali ke home (menampilkan hero)
+// Function untuk kembali ke home
 function showHome() {
     const heroSection = document.getElementById('hero-section');
     if (heroSection) {
@@ -587,7 +1017,7 @@ function scrollToTop() {
     });
 }
 
-// Show/hide back to top button based on scroll position
+// Show/hide back to top button
 window.addEventListener('scroll', function() {
     const backToTop = document.getElementById('backToTop');
     if (window.pageYOffset > 300) {
@@ -615,7 +1045,7 @@ if (logo) {
     });
 }
 
-// Inisialisasi: pastikan hero tampil dan semua section tersembunyi
+// Inisialisasi
 document.addEventListener('DOMContentLoaded', function() {
     showHome();
 });
