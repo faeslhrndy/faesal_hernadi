@@ -3,41 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Faesal Web Developer</title>
+<title>Faesal Web Developer - Professional Website Builder</title>
 
 <style>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', 'Poppins', system-ui, -apple-system, sans-serif;
 }
 
 body {
-    background: linear-gradient(rgba(2,6,23,0.85), rgba(2,6,23,0.9)),
-    url('https://wallpaperaccess.com/full/10812590.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    color: #f1f5f9;
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    color: #14532d;
+    min-height: 100vh;
 }
 
 /* NAVBAR */
 .navbar {
     display: flex;
     justify-content: space-between;
-    padding: 20px 30px;
+    align-items: center;
+    padding: 20px 40px;
     position: fixed;
     width: 100%;
     z-index: 1000;
-    background: rgba(2,6,23,0.9);
+    background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
 }
 
 .logo {
-    color: #38bdf8;
+    font-size: 28px;
     font-weight: bold;
-    font-size: 24px;
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.05);
 }
 
 /* MENU */
@@ -46,45 +54,68 @@ body {
 }
 
 .menu-icon {
-    font-size: 32px;
+    font-size: 28px;
     cursor: pointer;
-    padding: 5px 10px;
-    user-select: none;
+    padding: 8px 12px;
+    color: #059669;
+    transition: all 0.3s;
+    background: #f0fdf4;
+    border-radius: 10px;
 }
 
 .menu-icon:hover {
-    color: #38bdf8;
+    background: #059669;
+    color: white;
+    transform: scale(1.05);
 }
 
 /* DROPDOWN */
 .dropdown {
     position: absolute;
     right: 0;
-    top: 45px;
-    background: rgba(2,6,23,0.95);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
+    top: 55px;
+    background: white;
+    border-radius: 15px;
     display: none;
     flex-direction: column;
-    min-width: 200px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-    border: 1px solid rgba(56,189,248,0.3);
+    min-width: 220px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid #d1fae5;
+    overflow: hidden;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .dropdown a {
-    padding: 12px 20px;
+    padding: 14px 20px;
     text-decoration: none;
-    color: #e2e8f0;
+    color: #065f46;
     transition: all 0.3s;
+    font-weight: 500;
+    border-bottom: 1px solid #f0fdf4;
+}
+
+.dropdown a:last-child {
+    border-bottom: none;
 }
 
 .dropdown a:hover {
-    background: #1e293b;
-    color: #38bdf8;
-    border-radius: 10px;
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    color: white;
+    padding-left: 30px;
 }
 
-/* HERO */
+/* HERO SECTION */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -93,102 +124,141 @@ body {
     align-items: center;
     text-align: center;
     padding: 100px 20px 50px;
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
 }
 
 .hero h1 {
-    font-size: 42px;
-    color: #38bdf8;
-    margin-bottom: 20px;
+    font-size: 52px;
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 30px;
+    font-weight: 800;
+    line-height: 1.2;
 }
 
 .hero p {
-    margin-top: 20px;
-    max-width: 750px;
-    line-height: 1.7;
+    max-width: 800px;
+    background: white;
+    padding: 35px;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(5, 150, 105, 0.1);
+    line-height: 1.8;
+    color: #065f46;
+    margin: 20px auto;
+    border: 1px solid #d1fae5;
 }
 
 /* BUTTON */
 .buttons {
     margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .buttons a {
     display: inline-block;
-    margin: 10px;
-    padding: 12px 28px;
-    border-radius: 10px;
+    padding: 14px 32px;
+    border-radius: 50px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
     transition: all 0.3s;
     cursor: pointer;
+    font-size: 16px;
 }
 
 .btn-primary {
-    background: #38bdf8;
-    color: #020617;
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    color: white;
+    box-shadow: 0 5px 15px rgba(5, 150, 105, 0.3);
 }
 
 .btn-primary:hover {
-    background: #0ea5e9;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(5, 150, 105, 0.4);
 }
 
 .btn-outline {
-    border: 2px solid #38bdf8;
-    color: #38bdf8;
-    background: transparent;
+    border: 2px solid #10b981;
+    color: #059669;
+    background: white;
 }
 
 .btn-outline:hover {
-    background: #38bdf8;
-    color: #020617;
-    transform: translateY(-2px);
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    color: white;
+    transform: translateY(-3px);
+    border-color: transparent;
 }
 
-/* SECTION */
+/* SECTION CARD STYLE */
 .section {
     display: none;
     padding: 100px 30px;
-    max-width: 900px;
+    max-width: 1000px;
     margin: auto;
-    animation: fadeIn 0.5s ease;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    animation: fadeInUp 0.6s ease;
 }
 
 .section.active {
     display: block;
 }
 
+/* Card style untuk setiap section */
+.section > * {
+    background: white;
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid #d1fae5;
+}
+
 .section h2 {
-    color: #38bdf8;
-    margin-bottom: 20px;
-    font-size: 32px;
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 25px;
+    font-size: 36px;
+    font-weight: 700;
+    padding: 0;
 }
 
 .section ul {
-    margin-left: 20px;
-    margin-top: 10px;
+    margin-left: 25px;
+    margin-top: 15px;
     margin-bottom: 20px;
 }
 
 .section ul li {
-    margin: 8px 0;
+    margin: 12px 0;
     line-height: 1.6;
+    color: #065f46;
 }
 
 .section p {
     margin: 15px 0;
     line-height: 1.8;
+    color: #065f46;
+}
+
+.section strong {
+    color: #059669;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* SHOW MENU */
@@ -201,10 +271,10 @@ body {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background: #38bdf8;
-    color: #020617;
-    width: 45px;
-    height: 45px;
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    color: white;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     display: none;
     align-items: center;
@@ -214,39 +284,126 @@ body {
     font-weight: bold;
     transition: all 0.3s;
     z-index: 999;
+    box-shadow: 0 5px 15px rgba(5, 150, 105, 0.3);
 }
 
 .back-to-top:hover {
-    background: #0ea5e9;
     transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(5, 150, 105, 0.4);
 }
 
 .back-to-top.show {
     display: flex;
 }
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+    
+    .logo {
+        font-size: 22px;
+    }
+    
     .hero h1 {
-        font-size: 28px;
+        font-size: 32px;
     }
     
     .hero p {
         font-size: 14px;
+        padding: 25px;
+        margin: 15px;
+    }
+    
+    .buttons {
+        gap: 12px;
     }
     
     .buttons a {
-        padding: 8px 20px;
+        padding: 10px 20px;
         font-size: 14px;
     }
     
-    .section h2 {
-        font-size: 24px;
+    .section {
+        padding: 80px 15px;
     }
     
-    .section {
-        padding: 80px 20px;
+    .section > * {
+        padding: 25px;
     }
+    
+    .section h2 {
+        font-size: 28px;
+    }
+    
+    .section ul {
+        margin-left: 20px;
+    }
+    
+    .dropdown {
+        min-width: 180px;
+    }
+    
+    .dropdown a {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f0fdf4;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #059669;
+}
+
+/* Additional polish for better readability */
+.section ul li::marker {
+    color: #10b981;
+}
+
+.hero p::first-letter {
+    font-size: 48px;
+    font-weight: bold;
+    color: #059669;
+    margin-right: 5px;
+}
+
+/* Card hover effect */
+.section > * {
+    transition: all 0.3s ease;
+}
+
+.section > *:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(5, 150, 105, 0.15);
+}
+
+/* Footer note (optional) */
+.footer-note {
+    text-align: center;
+    padding: 30px;
+    color: #065f46;
+    background: white;
+    margin-top: 50px;
+    border-top: 1px solid #d1fae5;
 }
 </style>
 </head>
@@ -255,7 +412,7 @@ body {
 
 <!-- NAVBAR -->
 <div class="navbar">
-    <div class="logo">⚡ Faesal Dev</div>
+    <div class="logo" onclick="showHome()">🌿 Faesal Dev</div>
 
     <div class="menu">
         <div class="menu-icon" onclick="toggleMenu()">☰</div>
@@ -293,65 +450,69 @@ body {
 
 <!-- TENTANG KAMI SECTION -->
 <div id="about" class="section">
-    <h2>👨‍💻 Tentang Kami</h2>
-    <p>
-        Kami adalah tim kreatif dan profesional di bidang teknologi informasi yang memiliki semangat untuk membantu bisnis berkembang melalui digitalisasi.
-        <br><br>
-        <strong>Visi kami</strong> adalah menjadi mitra terpercaya dalam pengembangan website yang inovatif dan berkualitas.
-        <br><br>
-        <strong>Misi kami:</strong>
-    </p>
-    <ul>
-        <li>✅ Memberikan layanan pembuatan website yang cepat, berkualitas, dan sesuai kebutuhan</li>
-        <li>✅ Mengutamakan kepuasan pelanggan</li>
-        <li>✅ Mengembangkan solusi digital yang efektif dan efisien</li>
-        <li>✅ Mendukung transformasi digital bagi UMKM dan bisnis lokal</li>
-    </ul>
-    <p>
-        Kami percaya bahwa setiap bisnis membutuhkan kehadiran online yang kuat untuk bersaing di era digital saat ini.
-    </p>
+    <div>
+        <h2>👨‍💻 Tentang Kami</h2>
+        <p>
+            Kami adalah tim kreatif dan profesional di bidang teknologi informasi yang memiliki semangat untuk membantu bisnis berkembang melalui digitalisasi.
+            <br><br>
+            <strong>🎯 Visi kami</strong> adalah menjadi mitra terpercaya dalam pengembangan website yang inovatif dan berkualitas.
+            <br><br>
+            <strong>⭐ Misi kami:</strong>
+        </p>
+        <ul>
+            <li>✅ Memberikan layanan pembuatan website yang cepat, berkualitas, dan sesuai kebutuhan</li>
+            <li>✅ Mengutamakan kepuasan pelanggan dengan support terbaik</li>
+            <li>✅ Mengembangkan solusi digital yang efektif dan efisien</li>
+            <li>✅ Mendukung transformasi digital bagi UMKM dan bisnis lokal</li>
+        </ul>
+        <p>
+            <strong>💡 Kami percaya</strong> bahwa setiap bisnis membutuhkan kehadiran online yang kuat untuk bersaing di era digital saat ini.
+        </p>
+    </div>
 </div>
 
 <!-- BMC SECTION -->
 <div id="bmc" class="section">
-    <h2>📊 Business Model Canvas</h2>
+    <div>
+        <h2>📊 Business Model Canvas</h2>
 
-    <p><strong>1. Key Partners (Mitra Kunci)</strong></p>
-    <ul>
-        <li>🤝 Penyedia hosting & domain</li>
-        <li>🤝 Developer & designer freelance</li>
-        <li>🤝 Digital marketing agency</li>
-        <li>🤝 Penyedia payment gateway</li>
-        <li>🤝 Platform teknologi & tools</li>
-    </ul>
+        <p><strong>🤝 1. Key Partners (Mitra Kunci)</strong></p>
+        <ul>
+            <li>Penyedia hosting & domain terpercaya</li>
+            <li>Developer & designer freelance berpengalaman</li>
+            <li>Digital marketing agency partner</li>
+            <li>Penyedia payment gateway profesional</li>
+            <li>Platform teknologi & tools modern</li>
+        </ul>
 
-    <p><strong>2. Key Activities (Aktivitas Kunci)</strong></p>
-    <ul>
-        <li>🎨 Mendesain tampilan website (UI/UX)</li>
-        <li>💻 Pengembangan website</li>
-        <li>🔧 Maintenance & update</li>
-        <li>📞 Konsultasi klien</li>
-        <li>📈 Optimasi SEO dasar</li>
-    </ul>
+        <p><strong>⚙️ 2. Key Activities (Aktivitas Kunci)</strong></p>
+        <ul>
+            <li>Mendesain tampilan website modern (UI/UX)</li>
+            <li>Pengembangan website dengan teknologi terkini</li>
+            <li>Maintenance & update rutin berkala</li>
+            <li>Konsultasi dan pendampingan klien</li>
+            <li>Optimasi SEO dan performa website</li>
+        </ul>
 
-    <p><strong>3. Value Propositions (Nilai Lebih)</strong></p>
-    <ul>
-        <li>✨ Website profesional & modern</li>
-        <li>💰 Harga terjangkau</li>
-        <li>📱 Desain responsif</li>
-        <li>⚡ Pengerjaan cepat</li>
-        <li>🛠️ Support & maintenance</li>
-        <li>🎯 Custom sesuai kebutuhan</li>
-    </ul>
+        <p><strong>💎 3. Value Propositions (Nilai Lebih)</strong></p>
+        <ul>
+            <li>Website profesional & modern dengan desain eksklusif</li>
+            <li>Harga terjangkau dengan kualitas premium</li>
+            <li>Desain responsif untuk semua device</li>
+            <li>Pengerjaan cepat tepat waktu</li>
+            <li>Support & maintenance purna jual</li>
+            <li>Custom 100% sesuai kebutuhan bisnis</li>
+        </ul>
 
-    <p><strong>4. Key Resources (Sumber Daya Kunci)</strong></p>
-    <ul>
-        <li>👨‍💻 Tim developer & designer</li>
-        <li>💻 Perangkat komputer & software</li>
-        <li>🌐 Koneksi internet</li>
-        <li>🛠️ Tools pengembangan</li>
-        <li>📡 Server & hosting</li>
-    </ul>
+        <p><strong>📦 4. Key Resources (Sumber Daya Kunci)</strong></p>
+        <ul>
+            <li>Tim developer & designer profesional</li>
+            <li>Perangkat komputer & software berlisensi</li>
+            <li>Koneksi internet super cepat</li>
+            <li>Tools pengembangan modern</li>
+            <li>Server & hosting premium</li>
+        </ul>
+    </div>
 </div>
 
 <!-- Back to Top Button -->
@@ -447,16 +608,12 @@ document.addEventListener('click', function(e) {
 });
 
 // Logo click to go home
-document.querySelector('.logo').addEventListener('click', function() {
-    showHome();
-});
-
-// Prevent default untuk semua link yang tidak memiliki href yang valid
-document.querySelectorAll('a[href="#"]').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
+const logo = document.querySelector('.logo');
+if (logo) {
+    logo.addEventListener('click', function() {
+        showHome();
     });
-});
+}
 
 // Inisialisasi: pastikan hero tampil dan semua section tersembunyi
 document.addEventListener('DOMContentLoaded', function() {
