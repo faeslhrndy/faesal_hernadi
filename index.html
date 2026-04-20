@@ -13,7 +13,6 @@
     font-family: 'Segoe UI', sans-serif;
 }
 
-/* BACKGROUND */
 body {
     background: linear-gradient(rgba(2,6,23,0.85), rgba(2,6,23,0.9)),
     url('https://wallpaperaccess.com/full/10812590.png');
@@ -30,6 +29,8 @@ body {
     padding: 20px 30px;
     position: fixed;
     width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
@@ -57,12 +58,14 @@ body {
     display: none;
     flex-direction: column;
     min-width: 200px;
+    overflow: hidden;
 }
 
 .dropdown a {
     padding: 12px;
     text-decoration: none;
     color: #e2e8f0;
+    transition: 0.2s;
 }
 
 .dropdown a:hover {
@@ -103,6 +106,7 @@ body {
     border-radius: 10px;
     text-decoration: none;
     font-weight: bold;
+    transition: 0.3s;
 }
 
 .btn-primary {
@@ -115,12 +119,25 @@ body {
     color: #38bdf8;
 }
 
-/* SECTION (HIDDEN AWAL) */
+.buttons a:hover {
+    transform: translateY(-3px);
+}
+
+/* SECTION */
 .section {
-    display: none;
+    opacity: 0;
+    transform: translateY(40px);
+    pointer-events: none;
     padding: 100px 30px;
     max-width: 900px;
     margin: auto;
+    transition: 0.5s;
+}
+
+.section.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
 }
 
 .section h2 {
@@ -132,9 +149,9 @@ body {
     margin-left: 20px;
 }
 
-/* SHOW */
+/* SHOW MENU */
 .show {
-    display: block;
+    display: flex;
 }
 </style>
 </head>
@@ -175,7 +192,7 @@ body {
     <div class="buttons">
         <a href="#" onclick="showSection('about')" class="btn-outline">Tentang Kami</a>
         <a href="#" onclick="showSection('bmc')" class="btn-outline">Business Model</a>
-        <a href="https://wa.me/6289515761958" class="btn-primary">Hubungi Kami</a>
+        <a href="https://wa.me/6289515761958" target="_blank" class="btn-primary">Hubungi Kami</a>
     </div>
 </div>
 
@@ -249,11 +266,25 @@ function toggleMenu() {
 }
 
 function showSection(id) {
-    document.getElementById("about").style.display = "none";
-    document.getElementById("bmc").style.display = "none";
-    document.getElementById(id).style.display = "block";
-    window.scrollTo(0, document.body.scrollHeight);
+    document.querySelectorAll('.section').forEach(sec => {
+        sec.classList.remove('active');
+    });
+
+    document.getElementById(id).classList.add('active');
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+
+    document.getElementById("dropdownMenu").classList.remove("show");
 }
+
+/* klik luar menu = tutup */
+document.addEventListener('click', function(e) {
+    const menu = document.getElementById("dropdownMenu");
+    const icon = document.querySelector(".menu-icon");
+
+    if (!icon.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.remove("show");
+    }
+});
 </script>
 
 </body>
