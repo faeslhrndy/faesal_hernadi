@@ -1,160 +1,159 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faesal Web Developer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faesal Web Developer</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
 
-        body {
-            background: #0f172a;
-            color: #e2e8f0;
-        }
+body {
+    background: #0f172a;
+    color: #e2e8f0;
+}
 
-        /* NAVBAR */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 40px;
-            background: #020617;
-            border-bottom: 1px solid #1e293b;
-            position: sticky;
-            top: 0;
-        }
+/* NAVBAR ICON */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: transparent;
+    position: fixed;
+    width: 100%;
+}
 
-        .navbar h1 {
-            color: #38bdf8;
-        }
+.logo {
+    color: #38bdf8;
+    font-weight: bold;
+}
 
-        .nav-links a {
-            color: #cbd5f5;
-            margin-left: 20px;
-            text-decoration: none;
-        }
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
 
-        .nav-links a:hover {
-            color: #38bdf8;
-        }
+/* HERO (HALAMAN AWAL CLEAN) */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
 
-        /* HERO */
-        .hero {
-            text-align: center;
-            padding: 60px 20px;
-        }
+.hero h1 {
+    font-size: 40px;
+    color: #38bdf8;
+}
 
-        .hero h2 {
-            font-size: 36px;
-            color: #38bdf8;
-        }
+.hero p {
+    margin: 15px 0;
+    color: #94a3b8;
+    max-width: 500px;
+}
 
-        .hero p {
-            color: #94a3b8;
-            margin: 15px 0;
-        }
+/* BUTTON */
+.buttons a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #38bdf8;
-            color: #020617;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+.btn-primary {
+    background: #38bdf8;
+    color: #020617;
+}
 
-        /* SECTION */
-        .section {
-            padding: 50px 30px;
-            text-align: center;
-        }
+.btn-outline {
+    border: 1px solid #38bdf8;
+    color: #38bdf8;
+}
 
-        .section h2 {
-            margin-bottom: 20px;
-            color: #38bdf8;
-        }
+/* SECTION */
+.section {
+    padding: 80px 30px;
+    text-align: center;
+}
 
-        .section p {
-            max-width: 600px;
-            margin: auto;
-            color: #94a3b8;
-        }
+.section h2 {
+    color: #38bdf8;
+    margin-bottom: 20px;
+}
 
-        /* BMC */
-        .bmc-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-            padding: 40px;
-        }
+/* BMC GRID */
+.bmc-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
 
-        .card {
-            background: #020617;
-            padding: 20px;
-            border-radius: 15px;
-            border: 1px solid #1e293b;
-        }
+.card {
+    background: #020617;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #1e293b;
+}
 
-        .card h3 {
-            color: #38bdf8;
-            margin-bottom: 10px;
-        }
+.card h3 {
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
 
-        .card ul {
-            list-style: none;
-        }
+.card li {
+    list-style: none;
+    margin-bottom: 6px;
+}
 
-        .card li {
-            margin-bottom: 8px;
-            color: #cbd5f5;
-        }
+/* CONTACT */
+.contact a {
+    display: inline-block;
+    margin-top: 20px;
+    background: #25D366;
+    padding: 12px 20px;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+}
 
-        /* CONTACT */
-        .contact a {
-            display: inline-block;
-            margin-top: 20px;
-            background: #25D366;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        /* FOOTER */
-        .footer {
-            text-align: center;
-            padding: 20px;
-            background: #020617;
-            border-top: 1px solid #1e293b;
-        }
-    </style>
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #1e293b;
+}
+</style>
 </head>
+
 <body>
 
 <!-- NAVBAR -->
 <div class="navbar">
-    <h1>Faesal Web Dev</h1>
-    <div class="nav-links">
-        <a href="#">Home</a>
-        <a href="#bmc">BMC</a>
-        <a href="#about">Tentang</a>
-        <a href="#contact">Kontak</a>
-    </div>
+    <div class="logo">Faesal Dev</div>
+    <div class="menu-icon">☰</div>
 </div>
 
-<!-- HERO -->
+<!-- HERO CLEAN -->
 <div class="hero">
-    <h2>Jasa Pembuatan Website Profesional</h2>
-    <p>Membantu UMKM & personal brand memiliki website modern dan responsive</p>
-    <a href="#contact" class="btn">Hubungi Sekarang</a>
+    <h1>Jasa Pembuatan Website</h1>
+    <p>Membantu UMKM, mahasiswa, dan personal brand memiliki website modern, cepat, dan profesional.</p>
+
+    <div class="buttons">
+        <a href="#bmc" class="btn-primary">BMC</a>
+        <a href="#about" class="btn-outline">Tentang Kami</a>
+        <a href="#contact" class="btn-outline">Hubungi Kami</a>
+    </div>
 </div>
 
 <!-- TENTANG -->
@@ -163,109 +162,53 @@
     <p>
         Faesal Web Developer adalah jasa pembuatan website yang fokus membantu UMKM,
         mahasiswa, dan pelaku usaha digital untuk memiliki website profesional,
-        modern, dan sesuai kebutuhan. Kami mengutamakan kualitas desain,
-        performa, serta kemudahan penggunaan.
+        modern, dan sesuai kebutuhan.
     </p>
 </div>
 
 <!-- BMC -->
 <div class="section" id="bmc">
     <h2>Business Model Canvas</h2>
-</div>
 
-<div class="bmc-container">
+    <div class="bmc-container">
 
-    <div class="card">
-        <h3>🤝 Key Partners</h3>
-        <ul>
-            <li>Niagahoster / Rumahweb</li>
-            <li>Desainer UI/UX</li>
-            <li>Developer freelance</li>
-        </ul>
+        <div class="card">
+            <h3>🤝 Key Partners</h3>
+            <ul>
+                <li>Hosting & Domain</li>
+                <li>UI/UX Designer</li>
+                <li>Developer</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>⚙️ Key Activities</h3>
+            <ul>
+                <li>Coding</li>
+                <li>Design</li>
+                <li>Konsultasi</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>🎯 Value</h3>
+            <ul>
+                <li>Murah & cepat</li>
+                <li>Modern</li>
+                <li>Custom</li>
+            </ul>
+        </div>
+
     </div>
-
-    <div class="card">
-        <h3>⚙️ Key Activities</h3>
-        <ul>
-            <li>Coding website</li>
-            <li>Desain UI</li>
-            <li>Konsultasi client</li>
-            <li>Maintenance</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h3>🎯 Value Propositions</h3>
-        <ul>
-            <li>Website murah & cepat</li>
-            <li>Desain modern</li>
-            <li>Custom kebutuhan</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h3>💬 Customer Relationships</h3>
-        <ul>
-            <li>Fast respon WA</li>
-            <li>Konsultasi gratis</li>
-            <li>Support after sales</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h3>👥 Customer Segments</h3>
-        <ul>
-            <li>UMKM</li>
-            <li>Mahasiswa</li>
-            <li>Freelancer</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h3>📢 Channels</h3>
-        <ul>
-            <li>WhatsApp</li>
-            <li>Instagram</li>
-            <li>GitHub</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h3>🧰 Key Resources</h3>
-        <ul>
-            <li>Laptop</li>
-            <li>Skill coding</li>
-            <li>Internet</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h3>💸 Cost Structure</h3>
-        <ul>
-            <li>Internet</li>
-            <li>Hosting</li>
-            <li>Listrik</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h3>💰 Revenue Streams</h3>
-        <ul>
-            <li>Jasa website</li>
-            <li>Maintenance</li>
-            <li>Upgrade fitur</li>
-        </ul>
-    </div>
-
 </div>
 
 <!-- KONTAK -->
 <div class="section contact" id="contact">
     <h2>Hubungi Kami</h2>
-    <p>Hubungi kami langsung melalui WhatsApp untuk konsultasi GRATIS</p>
+    <p>Klik tombol di bawah untuk langsung chat WhatsApp</p>
 
     <a href="https://wa.me/6289515761958" target="_blank">
-        Chat WhatsApp Sekarang
+        Chat WhatsApp
     </a>
 </div>
 
